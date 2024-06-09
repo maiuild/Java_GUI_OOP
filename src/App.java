@@ -6,7 +6,7 @@ public class App {
         View view = new View();
 
         if (model.checkIfFileExists()) {
-            view.setFileNameLabel(model.getFilePath());
+            view.setFileNameLabelText(model.getFilePath());
         }
 
         new Controller(model, view);

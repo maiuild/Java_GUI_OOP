@@ -19,13 +19,16 @@ public class Controller {
             String cylinderHeight = view.getCylinderHeightText();
 
             validateAndCalculate(sphereRadius, cylinderRadius, cylinderHeight);
-            if (model.checkIfFileExists()) {
-                view.setFileNameLabel(model.getFilePath());
-            }
 
+            // Calculate values and update GUI
             view.clearTextArea();
             view.appendTextArea(model.calculateSphere(sphereRadius));
             view.appendTextArea(model.calculateCylinder(cylinderRadius, cylinderHeight));
+
+            // Check if the file exists and update file path label in the view
+            if (model.checkIfFileExists()) {
+                view.setFileNameLabelText(model.getFilePath());
+            }
         }
 
         private void validateAndCalculate(String sphereRadius, String cylinderRadius, String cylinderHeight) {

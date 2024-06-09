@@ -11,7 +11,7 @@ public class View extends JFrame {
     private final JLabel sphereRadiusError;
     private final JLabel cylinderRadiusError;
     private final JLabel cylinderHeightError;
-    private final JTextArea fileNameLabel; // Changed to JTextArea to handle wrapping
+    private final JLabel fileNameLabel; // Changed to JLabel
 
     public View() {
         super("OOP Kujundid GUI");
@@ -34,11 +34,7 @@ public class View extends JFrame {
         cylinderRadiusError.setForeground(Color.RED);
         cylinderHeightError = new JLabel("");
         cylinderHeightError.setForeground(Color.RED);
-        fileNameLabel = new JTextArea(2, 40); // Changed to JTextArea to handle wrapping
-        fileNameLabel.setFont(new Font("Serif", Font.PLAIN, 12));
-        fileNameLabel.setLineWrap(true);
-        fileNameLabel.setWrapStyleWord(true);
-        fileNameLabel.setEditable(false);
+        fileNameLabel = new JLabel(""); // Changed to JLabel
 
         // Top panel
         JPanel topPanel = new JPanel();
@@ -111,8 +107,8 @@ public class View extends JFrame {
         cylinderHeightError.setText(error);
     }
 
-    public void setFileNameLabel(String fileName) {
-        fileNameLabel.setText(fileName);
+    public void setFileNameLabelText(String text) {
+        fileNameLabel.setText(text);
     }
 
     public void clearTextArea() {
